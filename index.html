@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Code Assistant Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            typography: ({ theme }) => ({
+              DEFAULT: {
+                css: {
+                  'code::before': {
+                    content: '""',
+                  },
+                  'code::after': {
+                    content: '""',
+                  },
+                },
+              },
+            }),
+            colors: {
+              'brand-primary': '#0ea5e9', // sky-500
+              'brand-secondary': '#4338ca', // indigo-700
+              'dark-bg': '#0f172a', // slate-900
+              'dark-surface': '#1e293b', // slate-800
+              'dark-border': '#334155', // slate-700
+              'dark-text-primary': '#f1f5f9', // slate-100
+              'dark-text-secondary': '#94a3b8', // slate-400
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Added Babel Standalone to transpile TSX in the browser -->
+    <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
+
+    <script type="importmap">
+{
+  "imports": {
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client.js",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0/index.js",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0/index.js",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "@codemirror/state": "https://esm.sh/@codemirror/state@6.4.1",
+    "@codemirror/view": "https://esm.sh/@codemirror/view@6.26.3",
+    "@codemirror/commands": "https://esm.sh/@codemirror/commands@6.5.0",
+    "@codemirror/theme-one-dark": "https://esm.sh/@codemirror/theme-one-dark@6.1.2",
+    "@codemirror/merge": "https://esm.sh/@codemirror/merge@6.4.0",
+    "@codemirror/lang-javascript": "https://esm.sh/@codemirror/lang-javascript@6.2.2",
+    "@codemirror/lang-python": "https://esm.sh/@codemirror/lang-python@6.1.6",
+    "@codemirror/lang-java": "https://esm.sh/@codemirror/lang-java@6.0.1",
+    "@codemirror/lang-cpp": "https://esm.sh/@codemirror/lang-cpp@6.0.2",
+    "@codemirror/lang-html": "https://esm.sh/@codemirror/lang-html@6.4.9",
+    "@codemirror/lang-css": "https://esm.sh/@codemirror/lang-css@6.2.1",
+    "@codemirror/lang-sql": "https://esm.sh/@codemirror/lang-sql@6.6.2"
+  }
+}
+</script>
+    <!-- Changed script type to text/babel and fixed path to be relative -->
+    <script type="text/babel" data-type="module" src="./index.tsx"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
